@@ -22,8 +22,7 @@ public class MainController {
     }
 
     @PostMapping("/")
-    public String saveUser(@RequestBody Person person) {
-        personService.saveUser(person);
-        return "All is ok";
+    public Person saveUser(@RequestBody Person person) {
+        return personService.saveUser(person);
     }
 }

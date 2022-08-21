@@ -16,10 +16,10 @@ public class Questionnaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-//
-//    @ManyToMany(mappedBy = "questionnaires")
-//    @ToString.Exclude
-//    private List<User> users;
+
+    @ManyToMany(mappedBy = "questionnaires")
+    @ToString.Exclude
+    private List<Person> people;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "questionnaire_id")
