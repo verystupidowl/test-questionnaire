@@ -5,6 +5,8 @@ import com.tgc.testQuestionnaire.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
@@ -17,5 +19,9 @@ public class PersonService {
 
     public Person saveUser(Person person) {
         return personRepository.save(person);
+    }
+
+    public List<Person> findAll() {
+        return personRepository.findAll();
     }
 }

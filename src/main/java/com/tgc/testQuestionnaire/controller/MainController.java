@@ -5,6 +5,8 @@ import com.tgc.testQuestionnaire.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("http://localhost:3000/")
 public class MainController {
@@ -24,5 +26,10 @@ public class MainController {
     @PostMapping("/")
     public Person saveUser(@RequestBody Person person) {
         return personService.saveUser(person);
+    }
+
+    @GetMapping("/")
+    public List<Person> getAll() {
+        return personService.findAll();
     }
 }
